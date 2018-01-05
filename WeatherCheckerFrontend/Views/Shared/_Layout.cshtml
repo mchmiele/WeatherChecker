@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/content/bootstrap",
+    "~/content/layout")
+
+    @Scripts.Render("~/bundles/jQuery",
+        "~/bundles/Knockout",
+        "~/bundles/bootstrap"
+        )
+</head>
+
+<body>
+    <div id="allContent">
+        <div id="mainNavbar" class="navbar">
+            <h2 id="navbarHeader">
+                <a id="navbarHeaderLink" href="@Url.Action("Check", "Weather")">Weather checker</a>
+            </h2>
+        </div>
+        <div class="container page">
+            <div id="main">
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+﻿#allContent {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#mainNavbar {
+    z-index: 100;
+    background-color: #004280;
+    padding-left: 100px;
+}
+
+#navbarHeader a:hover {
+    color: white;
+    text-decoration:none;
+}
+
+#navbarHeaderLink {
+    color: white;
+}
+
+#main {
+    margin-top: 50px;
+}

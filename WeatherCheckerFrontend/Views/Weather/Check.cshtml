@@ -1,0 +1,57 @@
+﻿@using System.Web.Optimization
+
+@Styles.Render("~/content/weather",
+    "~/content/kendo")
+
+@Scripts.Render("~/bundles/Weater/Check",
+    "~/bundles/kendo")
+
+@{
+    ViewBag.Title = "Check";
+}
+
+<div id="main">
+    <div id="weatherForm">
+        <div class="form-block">
+            <label for="countryInputField" class="form-label">Country</label>
+            <input id="countryInputField" class="form-input form-control" type="text" data-bind="value: WeatherForm().Country, valueUpdate: 'afterkeydown'"/>
+        </div>
+        <div class="form-block">
+            <label for="cityInputField" class="form-label">City</label>
+            <input id="cityInputField" class="form-input form-control" type="text" data-bind="value: WeatherForm().City, valueUpdate: 'afterkeydown'"/>
+        </div>
+        <div id="loadingButtonBlock" class="form-block">
+            <button id="weatherFormButton" data-bind="click: CheckWeather" class="btn btn-primary btn-lg submit_btn" type="button">Check Weather</button>
+        </div>
+        <div id="messageBlock" class="form-block">
+            <h5 id="wariningLabel"><span data-bind="text: MessageWarining"></span> </h5>
+        </div>
+    </div>
+    <div id="weatherResult">
+        <h3>Country: <span data-bind="text: WeatherResult().Country"></span> </h3>
+        <h3>City: <span data-bind="text: WeatherResult().City"></span> </h3>
+
+        <ul id="progressBars">
+            <li>
+                <h4>Temperature (&deg C)</h4>
+                <div class="weatherResultprogressBar" id="temperatureBar"></div>
+            </li>
+            <li>
+                <h4>Humidity</h4>
+                <div class="weatherResultprogressBar" id="humidityBar"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal" id="loadingModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div align="center">
+                    Loading weather...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
